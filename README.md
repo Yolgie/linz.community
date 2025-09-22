@@ -1,6 +1,8 @@
 # linz.community
 
-A coordination platform for tech meetups and community events in Linz, Austria.
+A coordination platform for tech meetups and community events in Linz, Austria. 
+
+Built by the community, for the community—because great events shouldn't require great spreadsheet skills.
 
 ## Vision
 
@@ -91,7 +93,5 @@ See [CONTRIBUTORS.md](CONTRIBUTORS.md) for details.
 MIT License - see [LICENSE](LICENSE) file for details.
 
 ## Community
-
-Built by the community, for the community—because great events shouldn't require great spreadsheet skills.
 
 **Target Community**: Linz, Austria tech meetups and communities including Coderdojo, hackathons, game jams, student societies, and 15+ regular meetup groups.
