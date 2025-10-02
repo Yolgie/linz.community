@@ -16,8 +16,8 @@ The infrastructure should support rapid iteration during MVP development while e
 
 ## Relevant Documentation
 
-- [ADR-001: Backend Technology](../adr/adr001-backend-technology.md) - Kotlin/Spring Boot deployment requirements
-- [ADR-002: Database Technology](../adr/adr002-database-technology.md) - PostgreSQL hosting and management
+- [ADR-001: Backend Technology](../adr/adr001-backend-technology.md) - PocketBase deployment requirements
+- [ADR-002: Database Technology](../adr/adr002-database-technology.md) - SQLite bundled with PocketBase
 - [ADR-004: Hosting & Deployment](../adr/adr004-hosting-deployment.md) - VPS + Docker Compose strategy
 - [ADR-005: CI/CD & Code Hosting](../adr/adr005-cicd-code-hosting.md) - GitHub Actions pipeline
 - [ADR-006: Documentation Strategy](../adr/adr006-documentation-strategy.md) - Infrastructure documentation approach
@@ -33,28 +33,29 @@ The infrastructure should support rapid iteration during MVP development while e
 - [ ] Define environment configuration strategy (dev/staging/prod)
 
 ### Epic 2.2: Local Development Environment
-- [ ] Create Docker Compose setup for local development
-- [ ] Configure PostgreSQL container with initialization scripts
-- [ ] Set up Spring Boot development profile
+- [ ] Download PocketBase binary for local development
+- [ ] Configure PocketBase for development mode
+- [ ] Set up initial data collections (Events, Venues, Communities)
 - [ ] Document local setup process in developer guide
-- [ ] Create database migration workflow (Flyway/Liquibase)
-- [ ] Establish local testing database seeding
+- [ ] Create database seeding scripts for demo data
+- [ ] Configure PocketBase admin dashboard access
 
 ### Epic 2.3: CI/CD Pipeline Setup
 - [ ] Configure GitHub Actions workflow for build
-- [ ] Implement automated testing in CI pipeline
-- [ ] Set up code quality checks (linting, formatting)
-- [ ] Configure Docker image building and registry
+- [ ] Implement automated testing in CI pipeline (PocketBase API tests)
+- [ ] Set up code quality checks (linting, formatting for Go extensions if needed)
+- [ ] Build PocketBase deployment package
 - [ ] Implement automated deployment to VPS
 - [ ] Create deployment rollback procedures
 
 ### Epic 2.4: Production Hosting Setup
-- [ ] Configure VPS with Docker and Docker Compose
-- [ ] Set up PostgreSQL production database
+- [ ] Configure VPS for PocketBase deployment
+- [ ] Set up systemd service for PocketBase
 - [ ] Configure SSL/TLS certificates (Let's Encrypt)
-- [ ] Implement reverse proxy (nginx/traefik)
-- [ ] Configure application logging and log rotation
+- [ ] Implement reverse proxy (nginx/caddy) for HTTPS
+- [ ] Configure PocketBase logging
 - [ ] Set up firewall and basic security hardening
+- [ ] Configure PocketBase data directory and permissions
 
 ### Epic 2.5: Monitoring & Observability
 - [ ] Implement health check endpoints
@@ -65,12 +66,12 @@ The infrastructure should support rapid iteration during MVP development while e
 - [ ] Establish incident response procedures
 
 ### Epic 2.6: Backup & Data Protection
-- [ ] Implement automated database backups
+- [ ] Implement automated SQLite database backups (file-based)
 - [ ] Configure backup retention policies
 - [ ] Set up off-site backup storage
 - [ ] Document restore procedures
 - [ ] Test backup and restore process
-- [ ] Create data export capabilities for GDPR compliance
+- [ ] Create data export capabilities for GDPR compliance (use PocketBase export)
 
 ### Epic 2.7: Documentation & Handoff
 - [ ] Create comprehensive deployment guide
@@ -82,13 +83,13 @@ The infrastructure should support rapid iteration during MVP development while e
 
 ## Definition of Done
 
-- [ ] Local development environment runs with single command
-- [ ] CI/CD pipeline automatically tests and deploys code
+- [ ] Local development environment runs PocketBase with single command
+- [ ] CI/CD pipeline automatically tests and deploys
 - [ ] Production environment accessible via HTTPS
-- [ ] Database backups run automatically and are tested
+- [ ] SQLite database backups run automatically and are tested
 - [ ] Basic monitoring alerts infrastructure team of issues
 - [ ] All infrastructure is documented and reproducible
-- [ ] New developers can set up and deploy within 30 minutes
+- [ ] New developers can set up and deploy within 15 minutes
 - [ ] VPS hosting confirmed and configured
 - [ ] Testing strategy defined and implemented
-- [ ] Zero-downtime deployment capability (nice-to-have for v2)
+- [ ] PocketBase admin UI accessible for data management
