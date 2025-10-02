@@ -1,6 +1,6 @@
 # linz.community
 
-A coordination platform for tech meetups and community events in Linz, Austria. 
+A coordination platform for tech meetups and community events in Linz, Austria.
 
 Built by the community, for the community—because great events shouldn't require great spreadsheet skills.
 
@@ -16,7 +16,7 @@ This platform creates a shared organizational brain for the community. Organizer
 
 - **Event Calendar**: Shared calendar with conflict detection and multiple event statuses
 - **Venue Directory**: Comprehensive database of event-friendly venues with capabilities and contact info
-- **Speaker/Participation Opportunities**: Board where organizers post speaking and other participation opportunities andd interrested people can respond
+- **Speaker & Participation Opportunities**: Board where organizers post speaking and other participation opportunities and interrested people can respond
 - **Event Templates**: Reusable templates with slots for speakers, venues, organizers, and sponsors
 - **Checklists**: Customizable, shareable checklists with automated reminders
 - **Community Coordination**: Multi-community event collaboration and resource sharing
@@ -30,24 +30,23 @@ This platform creates a shared organizational brain for the community. Organizer
 
 ## Technology Stack
 
-- **Backend**: Kotlin + Spring Boot ([ADR-001](docs/adr/adr001-backend-technology.md))
-- **Database**: PostgreSQL ([ADR-002](docs/adr/adr002-database-technology.md))
+- **Backend**: PocketBase ([ADR-001](docs/adr/adr001-backend-technology.md))
+- **Database**: SQLite (bundled with PocketBase) ([ADR-002](docs/adr/adr002-database-technology.md))
 - **Frontend**: Server-side rendering + Alpine.js ([ADR-003](docs/adr/adr003-frontend-approach.md))
-- **Hosting**: VPS with Docker Compose ([ADR-004](docs/adr/adr004-hosting-deployment.md))
+- **Hosting**: VPS with Docker ([ADR-004](docs/adr/adr004-hosting-deployment.md))
 - **CI/CD**: GitHub Actions ([ADR-005](docs/adr/adr005-cicd-code-hosting.md))
 
 ## Getting Started
 
 ### Prerequisites
-- JDK 21+
-- Docker & Docker Compose
-- PostgreSQL (or use Docker Compose setup)
+- PocketBase binary
+- Docker & Docker Compose (for deployment)
 
 ### Quick Start
 ```bash
 git clone [repository-url]
 cd linz.community
-./gradlew bootRun
+./pocketbase serve
 ```
 
 Full setup instructions: [docs/guides/development-setup.md](docs/guides/development-setup.md)
@@ -77,8 +76,8 @@ The MVP will be a publicly accessible demo system showcasing core coordination w
 
 ## Documentation
 
-- [ADR-006: Documentation Strategy](docs/adr/adr006-documentation-strategy.md)
-- **Docs Root**: [docs/](docs/)
+- [**ADR-006: Documentation Strategy**](docs/adr/adr006-documentation-strategy.md)
+- **Documentation**: [docs/](docs/)
 - **Architecture Decisions**: [docs/adr/](docs/adr/)
 - **Epic Breakdown**: [docs/epics/](docs/epics/)
 
