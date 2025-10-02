@@ -56,6 +56,7 @@ The infrastructure should support rapid iteration during MVP development while e
 - [ ] Configure PocketBase logging
 - [ ] Set up firewall and basic security hardening
 - [ ] Configure PocketBase data directory and permissions
+- [ ] Set up email service (SMTP configuration for notifications)
 
 ### Epic 2.5: Monitoring & Observability
 - [ ] Implement health check endpoints
