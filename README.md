@@ -15,7 +15,7 @@ This platform creates a shared organizational brain for the community. Organizer
 ## Features
 
 - **Event Calendar**: Shared calendar with conflict detection and multiple event statuses
-- **Venue Directory**: Comprehensive database of tech-friendly venues with capabilities and contact info
+- **Venue Directory**: Comprehensive database of event-friendly venues with capabilities and contact info
 - **Speaker & Participation Opportunities**: Board where organizers post speaking and other participation opportunities and interrested people can respond
 - **Event Templates**: Reusable templates with slots for speakers, venues, organizers, and sponsors
 - **Checklists**: Customizable, shareable checklists with automated reminders
